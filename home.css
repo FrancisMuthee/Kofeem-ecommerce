@@ -1,0 +1,70 @@
+:root{
+    margin: 0;
+    padding: 0;
+    /* background-image: url(images/img1.jpg); */
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-color: black;
+
+}
+.nav ul{
+    /* align-content: center; */
+    position: relative;
+    justify-content: space-between;
+    text-align: center;
+}
+.nav li{
+    /* align-items: center;  */
+    display: inline-block;
+    text-align: center;
+    padding: 10px;
+    /* align-content: center; */
+    justify-content: space-between;
+    /* justify-content: flex-end; */
+
+}
+.heading h1{
+font-weight: 800;
+color: aliceblue;
+text-align: center;
+}
+
+.motto h4{
+    font-style: italic;
+    color: azure;
+    text-align: center;
+}
+.about h3{
+    color: white;
+    text-align: center;
+}
+p{
+    color: aliceblue;
+    text-align: center;
+}
+.view{
+    display: flex;
+    /* justify-content: space-between; */
+    align-items: center;
+    padding-left: 5rem;
+    height: auto;
+    /* margin-left: 10rem; */
+    /* align-content: center; */
+    /* padding: 2rem; */
+}
+.view img{
+    padding: 3rem;
+    height: auto;
+    width: auto;
+    margin-right: 2rem;
+}
+
+.view p{
+    margin-right: 50rem;
+}
+.form h3{
+    color: aliceblue;
+}
+.order h3{
+    color: aliceblue;
+}
