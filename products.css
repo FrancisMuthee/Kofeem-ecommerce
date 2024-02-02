@@ -1,0 +1,47 @@
+.blog1 img{
+    height: 10rem;
+    width: 10rem;
+}
+.blog2 img{
+    height: 10rem;
+    width: 10rem;
+}
+.blog3 img{
+    height: 10rem;
+    width: 10rem;
+}
+
+.blog1, .blog2, .blog3 {
+    /* Define a max-width and automatic height for images */
+    img {
+       max-width: 100%;
+       height: auto;
+       /* box-sizing: border-box; */
+       
+    }
+   
+    /* Style the headings */
+    h4 {
+       font-size: 24px; /* Adjust size as needed */
+       color: #333; /* Change color as desired */
+       margin-bottom: 10px; /* Space between heading and image */
+    }
+   
+    /* Style the paragraphs */
+    p {
+       font-size: 16px; /* Adjust size as needed */
+       color: #666; /* Change color as desired */
+       line-height: 1.5; /* Spacing between lines */
+       margin-bottom: 20px; /* Space below paragraphs */
+    }
+   
+    /* Add some padding around each blog post */
+    padding: 20px;
+    background-color: #f9f9f9; /* Light grey background */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    margin-bottom: 20px; /* Space between blog posts */
+    object-fit: fill;
+    /* align-items: center; */
+    /* display: flex; */
+   }
+   
