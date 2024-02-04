@@ -1,4 +1,5 @@
 {% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,7 +18,7 @@
             /* background-image: url(images/background.jpeg); */
             background-repeat: no-repeat;
             background-size: cover;
-            background-color: black;
+            background-color: brown;
             font-family: 'Barlow Condensed', sans-serif;
             font-family: 'Roboto', sans-serif;
             font-family: 'Sofia', cursive;
@@ -121,6 +122,14 @@
         <li><a href="products.html">Services</a></li>
         <li><a href="contact.html">Order</a></li>
         <li><a href="coupon.html">Offer</a></li>
+{% comment %} 
+        {% if user.is_authenticated%}
+        <li>Hello, {{user.first_name}}</li>
+        <li><a href="accounts/logout">logout</a></li>
+        {% else %}
+        <li><a href="accounts/register">register</a></li>
+        <li><a href="accounts/login">login</a></li>
+        {% endif %} {% endcomment %}
     </ul>
 </div>
 
