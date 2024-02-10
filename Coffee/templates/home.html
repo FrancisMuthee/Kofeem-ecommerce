@@ -7,15 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kofeem</title>
     <link rel="stylesheet" href="{% static 'home.css' %}">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Roboto:wght@100;300&family=Sofia&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="{% static 'https://fonts.googleapis.com' %}">
+    <link rel="preconnect" href="{% static 'https://fonts.gstatic.com' %}" crossorigin>
+    <link href="{% static 'https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@300&family=Roboto:wght@100;300&family=Sofia&display=swap' %}" rel="stylesheet">
     <!-- <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous"> -->
     <style>
         :root{
             margin: 0;
             padding: 0;
-            /* background-image: url(images/background.jpeg); */
+            background-image: url(https://majestycoffee.com/cdn/shop/articles/arabica_coffee_800x.jpg?v=1684799025); 
             background-repeat: no-repeat;
             background-size: cover;
             background-color: brown;
@@ -64,7 +64,7 @@
         
         .motto h4{
             font-style: italic;
-            color: azure;
+            color: white;
             text-align: center;
         }
         .about h3{
@@ -118,24 +118,24 @@
 <body>
     <div class="nav">
     <ul>
-        <li><a href="home.html">Home</a></li>
+        <li><a href="">Home</a></li>
         <li><a href="products.html">Services</a></li>
-        <li><a href="contact.html">Order</a></li>
-        <li><a href="coupon.html">Offer</a></li>
-{% comment %} 
+        {% comment %} <li><a href="register.html">Register</a></li>
+        <li><a href="login.html">Login</a></li> {% endcomment %}
+
         {% if user.is_authenticated%}
         <li>Hello, {{user.first_name}}</li>
-        <li><a href="accounts/logout">logout</a></li>
+        <li><a href="database/logout">logout</a></li>
         {% else %}
-        <li><a href="accounts/register">register</a></li>
-        <li><a href="accounts/login">login</a></li>
-        {% endif %} {% endcomment %}
+        <li><a href="database/register">register</a></li>
+        <li><a href="database/login">login</a></li>
+        {% endif %} 
     </ul>
 </div>
 
 <div class="back">
-    <img src="https://img.freepik.com/free-photo/coffee-cup-beans-white-background_1232-2000.jpg" alt="">
-    <h4>The holy heights</h4>
+    {% comment %} <img src="https://img.freepik.com/free-photo/coffee-cup-beans-white-background_1232-2000.jpg" alt=""> {% endcomment %}
+    {% comment %} <h4>The holy heights</h4> {% endcomment %}
 </div>
 
 <div class="heading">
@@ -162,14 +162,14 @@
 <div class="form" method="POST">
     <h3>Post a comment</h3>
         <input type="text" placeholder="comment...">
-        <button>Submit</button>
+        <button>comment</button>
 </div>
 
 <div class="order">
-    <h3>Request an order</h3>
+    <h3>Request catalogue</h3>
     <input type="text" placeholder="username">
     <input type="password" placeholder="password">
-    <button>Checkout</button>
+    <button>Submit</button>
 </div>
 
 
