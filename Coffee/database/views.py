@@ -16,7 +16,9 @@ def login(request):
             auth.login(request, user)
             return redirect("/")
         else:
-            messages.info(request, 'invalid credentials')
+            
+            messages.add_message(request, messages.INFO, 'Signout Successful.')
+            # messages.info(request, 'invalid credentials')
             return redirect('login')
     else:
         return render(request, 'login.html')

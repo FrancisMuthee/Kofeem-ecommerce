@@ -1,3 +1,5 @@
+{% load static %}
+{% static "images" as baseUrl %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -47,6 +49,13 @@ body {
 .input-box label {
   color: #333;
 }
+input[type="email"]{
+  margin-left: 1.5rem;
+}
+input[type="password"]{
+  margin-left: 1.0rem;
+}
+
 .form :where(.input-box input, .select-box) {
   position: relative;
   height: 50px;
@@ -128,96 +137,59 @@ body {
     row-gap: 15px;
   }
 }
+button{
+  {% comment %} align-items: center; {% endcomment %}
+  margin-left: 5rem;
+  color: white;
+  background-color: blue;
+  cursor: pointer;
+}
 
     </style>
 </head>
 <body>
-    {% comment %} <form action="register" method="post"> {% endcomment %}
+   
         {% csrf_token %}
         <section class="container">
             <header>Registration Form</header>
-            <form action="register" method="post">
+            <form action="register" method="POST">
                 {% csrf_token %}
               <div class="input-box">
-                <label>First name</label>
+                <label>First name:</label>
                 <input type="text" name="first_name" placeholder="First Name" />
-                {% comment %} <input type="text"  name="first_name" placeholder="Enter full name" required /> {% endcomment %}
               </div>
+              <br>
 
               <div class="input-box">
-                <label>Last name</label>
+                <label>Last name:</label>
                 <input type="text" name="last_name" placeholder="Last name">
               </div>
+              <br>
 
               <div class="input-box">
-                <label>Username</label>
+                <label>Username:</label>
                 <input type="text" name="username" placeholder="username" required />
               </div>
+              <br>
 
               <div class="input-box">
-                <label>Email</label>
+                <label>Email:</label>
                 <input type="email" name="email" placeholder="email" required />
               </div>
+              <br>
 
                 <div class="input-box">
-                <label>Password</label>
+                <label>Password:</label>
                 <input type="password" name="password1" placeholder="password">
               </div>
+              <br>
 
               <div class="input-box">
-                <label>Confirm Password</label>
+                <label>Confirm Password:</label>
                 <input type="password" name="password2" placeholder="password">
               </div>
+              <br>
 
-      
-              {% comment %} <div class="column">
-                <div class="input-box">
-                  <label>Phone Number</label>
-                  <input type="number" placeholder="Enter phone number" required />
-                </div> {% endcomment %}
-                <!-- <div class="input-box">
-                  <label>Birth Date</label>
-                  <input type="date" placeholder="Enter birth date" required />
-                </div> -->
-              {% comment %} </div>
-              <div class="gender-box">
-                <h3>Gender</h3>
-                <div class="gender-option">
-                  <div class="gender">
-                    <input type="radio" id="check-male" name="gender" checked />
-                    <label for="check-male">male</label>
-                  </div>
-                  <div class="gender">
-                    <input type="radio" id="check-female" name="gender" />
-                    <label for="check-female">Female</label>
-                  </div> {% endcomment %}
-                  <!-- <div class="gender">
-                    <input type="radio" id="check-other" name="gender" />
-                    <label for="check-other">prefer not to say</label>
-                  </div> -->
-                {% comment %} </div> {% endcomment %}
-              {% comment %} </div> {% endcomment %}
-              {% comment %} <div class="input-box address">
-                <label>Address</label>
-                <input type="text" placeholder="Enter your country" required /> {% endcomment %}
-                <!-- <input type="text" placeholder="Enter street address line 2" required /> -->
-                {% comment %} <div class="column"> {% endcomment %}
-                  <!-- <div class="select-box">
-                     <select>
-                      <option hidden>Country</option>
-                      <option>America</option>
-                      <option>Japan</option>
-                      <option>India</option>
-                      <option>Nepal</option>
-                    </select>
-                  </div> --> 
-            {% comment %} /      <input type="text" placeholder="Enter your region" required />
-                </div> {% endcomment %}
-                <!-- <div class="column">
-                  <input type="text" placeholder="Enter your region" required />
-                  <input type="number" placeholder="Enter postal code" required />
-                </div> -->
-              {% comment %} </div> {% endcomment %}
               <button>Submit</button>
             </form>
           </section>
@@ -228,11 +200,4 @@ body {
         </div>
         </body>
       </html>
-        {% comment %} <input type="text" name="first_name" placeholder="First Name"><br>
-        <input type="text" name="last_name" placeholder="Last name"><br>
-        <input type="text" name="username" placeholder="username"><br>
-        <input type="email" name="email" placeholder="email"><br>
-        <input type="password" name="password1" placeholder="password"><br>
-        <input type="password" name="password2" placeholder="Confirm password"><br>
-        <input type="submit"> {% endcomment %}
-    
+      
