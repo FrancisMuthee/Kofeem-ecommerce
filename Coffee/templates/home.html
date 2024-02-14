@@ -15,13 +15,14 @@
         :root{
             margin: 0;
             padding: 0;
-            background-image: url(https://majestycoffee.com/cdn/shop/articles/arabica_coffee_800x.jpg?v=1684799025); 
+            background-image: url("https://images.hindustantimes.com/img/2022/10/04/550x309/istockphoto-1220101964-612x612_1664895046921_1664895054038_1664895054038.jpg"); 
             background-repeat: no-repeat;
             background-size: cover;
             background-color: brown;
             font-family: 'Barlow Condensed', sans-serif;
             font-family: 'Roboto', sans-serif;
             font-family: 'Sofia', cursive;
+            box-sizing: border-box;
             
         }
         .back img{
@@ -41,26 +42,42 @@
             margin-left: 30rem;
             font-style: italic;
         }
-        .nav ul{
-            /* align-content: center; */
-            position: relative;
-            justify-content: space-between;
-            text-align: center;
+        .navbar .menu-links{
+            
+            {% comment %} align-items: center; {% endcomment %}
+            {% comment %} position: relative; {% endcomment %}
+            {% comment %} justify-content: space-between; {% endcomment %}
+            {% comment %} text-align: center; {% endcomment %}
+            display: flex;
+            float: right;
+            list-style: none;
+            font-weight: 800;
+            {% comment %} margin: 0 auto; {% endcomment %}
+            {% comment %} margin-left: 60rem; {% endcomment %}
+            {% comment %} justify-content: space-between; {% endcomment %}
         }
-        .nav li{
-            /* align-items: center;  */
-            display: inline-block;
-            text-align: center;
+        ul.menu-links{
+            font-size: larger;
+            font-style: italic;
+            font-weight: 1000;
+        }
+        .navbar li{
+            {% comment %} /* align-items: center;  */ {% endcomment %}
+            {% comment %} display: flex; {% endcomment %}
+            {% comment %} text-align: center; {% endcomment %}
             padding: 10px;
-            /* align-content: center; */
-            justify-content: space-between;
-            /* justify-content: flex-end; */
+
+            {% comment %} font-weight: 800; {% endcomment %}
+            {% comment %} align-content: center;  {% endcomment %}
+            {% comment %} justify-content: space-between; {% endcomment %}
+            {% comment %} /* justify-content: flex-end; */ {% endcomment %}
         
         }
         .heading h1{
-        font-weight: 800;
-        color: aliceblue;
-        text-align: center;
+            font-weight: 800;
+            color: aliceblue;
+            {% comment %} text-align: center; {% endcomment %}
+            margin: 0;
         }
         
         .motto h4{
@@ -113,12 +130,17 @@
         .order{
             place-items: center;
         }
+        @media (max-width: 768px) {
+            header {
+              padding: 10px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div class="nav">
-    <ul>
+    <nav class="navbar">
+    <ul class="menu-links">
         <li><a href="database/home">Home</a></li>
         <li><a href="products.html">Services</a></li>
         {% comment %} <li><a href="register.html">Register</a></li>
@@ -132,7 +154,7 @@
         <li><a href="database/login">login</a></li>
         {% endif %} 
     </ul>
-</div>
+</nav>
 
 <div class="back">
     {% comment %} <img src="https://img.freepik.com/free-photo/coffee-cup-beans-white-background_1232-2000.jpg" alt=""> {% endcomment %}
@@ -140,24 +162,23 @@
 </div>
 
 <div class="heading">
-    <h1>Kofeem Peaks</h1>
+    <h1>Kofeem Peaks.</h1>
     </div>
 
-<div class="motto">
+{% comment %} <div class="motto">
     <h4>Achieving the heights</h4>
-</div>
+</div> {% endcomment %}
 
 <div class="about">
     <h3>About Us</h3>
-    <p>Kofeem Peak is the placeholder for pure prime greatness. Just everything fully and rightfully well served. <br>
-    And even worth your price and coupons. Wanna try it?
+    <p>Kofeem Peaks, the pure peak greatness hub.<br>Awaken your senses with a steaming cup of Arabica motivation.
     </p>
 </div>
 
 <div class="view">
-    <img src="{% static 'images/cup.jpeg' %}" alt="">
+    {% comment %} <img src="{% static 'images/cup.jpeg' %}" alt=""> {% endcomment %}
     <!-- <p>Let's toast</p> -->
-    <img src="{% static 'images/holy.jpeg' %}" alt="">
+    {% comment %} <img src="{% static 'images/holy.jpeg' %}" alt=""> {% endcomment %}
 </div>
 
 <div class="form" method="POST">
