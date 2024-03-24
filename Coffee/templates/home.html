@@ -130,17 +130,27 @@
         .order{
             place-items: center;
         }
-        @media (max-width: 768px) {
-            header {
-              padding: 10px;
-            }
-        }
+     {% comment %} -------------xs----- {% endcomment %}
+     @media (min-width: 649px) {}
+     {% comment %} ---------sm--------- {% endcomment %}
+     @media (min-width: 649px) {}
+     {% comment %} -----------md------------ {% endcomment %}
+    @media (min-width: 768px) {}
+    {% comment %} ----------lg------------- {% endcomment %}
+    @media (min-width: 1024px) {}
+        {% comment %} --------------xl----------- {% endcomment %}
+    @media (min-width: 1280px) {}
+
+    {% comment %} -----------2xl----------- {% endcomment %}
+    @media (min-width: 1536px) {}
     </style>
 </head>
 
 <body>
+    <header>
     <nav class="navbar">
     <ul class="menu-links">
+        <span id="close-menu-btn" class="material-symbols-outlined">close</span>
         <li><a href="database/home">Home</a></li>
         <li><a href="products.html">Services</a></li>
         {% comment %} <li><a href="register.html">Register</a></li>
@@ -155,6 +165,7 @@
         {% endif %} 
     </ul>
 </nav>
+</header>
 
 <div class="back">
     {% comment %} <img src="https://img.freepik.com/free-photo/coffee-cup-beans-white-background_1232-2000.jpg" alt=""> {% endcomment %}
@@ -188,12 +199,23 @@
 </div>
 
 <div class="order">
-    <h3>Request catalogue</h3>
+    <h3>Subscribe to our news letter.</h3>
+    <h5>Join our database</h5>
     <input type="text" placeholder="username">
     <input type="password" placeholder="password">
     <button>Submit</button>
 </div>
 
+{% comment %} <script>
+    const header = document.querySelector("header");
+    const hamburgerBtn = document.querySelector("#hamburger-btn");
+    const closeMenuBtn = document.querySelector("#close-menu-btn");
 
+    // Toggle mobile menu on hamburger button click
+    hamburgerBtn.addEventListener("click", () => header.classList.toggle("show-mobile-menu"));
+
+    // Close mobile menu on close button click
+    closeMenuBtn.addEventListener("click", () => hamburgerBtn.click());
+  </script> {% endcomment %}
 </body>
 </html>
